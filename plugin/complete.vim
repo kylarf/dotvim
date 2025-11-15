@@ -109,5 +109,12 @@ function! CustomTagComplete(findstart, base) abort
   endif
 endfunction
 
+set completefunc=CustomTagComplete
 set completeopt=longest,menuone
-let g:gutentags_resolve_symlinks = 1
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+        \ if &omnifunc == "" |
+        \ setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+endif 

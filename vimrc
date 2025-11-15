@@ -20,28 +20,26 @@ nnoremap Y y$
 nnoremap <leader>o o<ESC>
 nnoremap <leader>O O<ESC>
 nnoremap <leader>e :Explore<CR>
+nnoremap <C-W>F <C-W>vgf
+nnoremap <C-W>[ <C-W>v<C-]>
+nnoremap <C-W>g[ <C-W>vg]
 
 " Ctags configuration
 let g:gutentags_project_root = ['.gutctags']
 let g:gutentags_ctags_tagfile = '.tags'
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P%{gutentags#statusline('\ (',')')}
+let g:gutentags_resolve_symlinks = 1
+set statusline=%<%f\ %h%m%r%=%-14.(Ln\ %l/%L,\ Col\ %c%V%)\ \|\ %P\ %{gutentags#statusline('(',')')}
 set tags=./.tags;,.tags
-nmap <leader>t :TagbarToggle<CR>
+nmap <leader>t :TagbarOpenAutoClose<CR>
+let g:tagbar_position = 'vertical rightbelow'
+
 
 " Buffer navigation
 set hidden
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
-nnoremap <leader>b :ls<CR>:buffer<Space>
-
-" Completion
-set completefunc=CustomTagComplete
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-        \ if &omnifunc == "" |
-        \ setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
-endif
+nnoremap <leader>bb :ls<CR>:buffer<Space>
+nnoremap <leader>bd :ls<CR>:bd<Space>
 
 " Tab setup
 nnoremap tt :tabnew<CR>
@@ -65,7 +63,7 @@ let g:gruvbox_contrast_light='medium'
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 
-" Make cursor blink and change between normal/insert modes
+" Make cursor change between normal/insert modes
 if !has('nvim')
     " Change cursor shapes based on whether we are in insert mode,
     " see https://vi.stackexchange.com/questions/9131/i-cant-switch-to-cursor-in-insert-mode
@@ -87,6 +85,8 @@ function! ToggleQuickFix()
         cclose
     endif
 endfunction
+
+nnoremap <leader>m :make %<CR><CR><CR>
 
 nnoremap <silent> <leader>f :call ToggleQuickFix()<CR>
 nnoremap ]q :cnext<CR>
