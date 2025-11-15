@@ -1,0 +1,5 @@
+--python-kinds=-i
+--exclude=*/.git/*
+--exclude=*/BUILD/*
+--exclude=*/build/*
+--exclude='*.swp'
