@@ -1,0 +1,15 @@
+[submodule "pack/vendor/start/gruvbox"]
+	path = pack/vendor/start/gruvbox
+	url = git@github.com:morhetz/gruvbox.git
+[submodule "pack/vendor/start/tagbar"]
+	path = pack/vendor/start/tagbar
+	url = git@github.com:preservim/tagbar.git
+[submodule "pack/vendor/start/vim-gutentags"]
+	path = pack/vendor/start/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
+[submodule "pack/vendor/start/vim-surround"]
+	path = pack/vendor/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "pack/vendor/start/vim-lsp"]
+	path = pack/vendor/start/vim-lsp
+	url = git@github.com:prabirshrestha/vim-lsp.git
