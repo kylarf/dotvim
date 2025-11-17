@@ -9,6 +9,14 @@ if executable('pylsp')
         \ })
 endif
 
+if executable('nimlangserver')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'nimlangserver',
+        \ 'cmd': {server_info->['nimlangserver']},
+        \ 'allowlist': ['nim'],
+        \ })
+endif
+
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
