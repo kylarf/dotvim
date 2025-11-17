@@ -13,3 +13,6 @@
 [submodule "pack/vendor/start/vim-lsp"]
 	path = pack/vendor/start/vim-lsp
 	url = git@github.com:prabirshrestha/vim-lsp.git
+[submodule "pack/vendor/start/nim.vim"]
+	path = pack/vendor/start/nim.vim
+	url = git@github.com:zah/nim.vim.git

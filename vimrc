@@ -89,6 +89,6 @@ endfunction
 nnoremap <leader>m :make %<CR><CR><CR>
 
 nnoremap <silent> <leader>f :call ToggleQuickFix()<CR>
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprev<CR>
+nnoremap ]f :cnext<CR>
+nnoremap [f :cprev<CR>
 autocmd filetype qf wincmd J
