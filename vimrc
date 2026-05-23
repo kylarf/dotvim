@@ -25,11 +25,11 @@ nnoremap <C-W>[ <C-W>v<C-]>
 nnoremap <C-W>g[ <C-W>vg]
 
 " Ctags configuration
-let g:gutentags_project_root = ['.gutctags']
-let g:gutentags_ctags_tagfile = '.tags'
-let g:gutentags_resolve_symlinks = 1
-set statusline=%<%f\ %h%m%r%=%-14.(Ln\ %l/%L,\ Col\ %c%V%)\ \|\ %P\ %{gutentags#statusline('(',')')}
-set tags=./.tags;,.tags
+" let g:gutentags_project_root = ['.gutctags']
+" let g:gutentags_ctags_tagfile = '.tags'
+" let g:gutentags_resolve_symlinks = 1
+set statusline=%<%f\ %h%m%r%=%-14.(Ln\ %l/%L,\ Col\ %c%V%)\ \|\ %P
+" set tags=./.tags;,.tags
 nmap <leader>t :TagbarOpenAutoClose<CR>
 let g:tagbar_position = 'vertical rightbelow'
 

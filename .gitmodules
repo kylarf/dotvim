@@ -4,9 +4,6 @@
 [submodule "pack/vendor/start/tagbar"]
 	path = pack/vendor/start/tagbar
 	url = git@github.com:preservim/tagbar.git
-[submodule "pack/vendor/start/vim-gutentags"]
-	path = pack/vendor/start/vim-gutentags
-	url = git@github.com:ludovicchabant/vim-gutentags.git
 [submodule "pack/vendor/start/vim-surround"]
 	path = pack/vendor/start/vim-surround
 	url = git@github.com:tpope/vim-surround.git
@@ -16,3 +13,6 @@
 [submodule "pack/vendor/start/nim.vim"]
 	path = pack/vendor/start/nim.vim
 	url = git@github.com:zah/nim.vim.git
+[submodule "pack/vendor/start/vim-syntax-ebnf"]
+	path = pack/vendor/start/vim-syntax-ebnf
+	url = git@github.com:egberts/vim-syntax-ebnf.git

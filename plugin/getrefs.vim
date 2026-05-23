@@ -35,9 +35,9 @@ function! GetRefs(curword)
 
     if filereadable(l:vg_file)
         let l:files = join(readfile(l:vg_file), " ")
-        let l:cmd = "vimgrep /" . a:curword . "/gj " . l:files
+        let l:cmd = 'vimgrep /\V' . escape(a:curword, '/\') . "/gj " . l:files
     else
-        let l:cmd = "vimgrep /" . a:curword . "/gj `git ls-files`"
+        let l:cmd = 'vimgrep /\V' . escape(a:curword, '/\') . "/gj `git ls-files`"
     endif
 
     execute 'cd ' . fnameescape(l:proj_dir)

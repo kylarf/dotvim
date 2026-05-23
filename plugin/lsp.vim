@@ -5,7 +5,20 @@ if executable('pylsp')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pylsp',
         \ 'cmd': {server_info->['pylsp']},
+        \ 'configurationSources': ['flake8'],
         \ 'allowlist': ['python'],
+        \ 'workspace_config': {
+        \   'pylsp': {
+        \     'configurationSources': ['flake8'],
+        \     'plugins': {
+        \       'flake8': {'enabled': v:true},
+        \       'pylsp_mypy': {'enabled': v:true, 'live_mode': v:true},
+        \       'pycodestyle': {'enabled': v:false},
+        \       'mccabe': {'enabled': v:false},
+        \       'pyflakes': {'enabled': v:false}
+        \     }
+        \   }
+        \ },
         \ })
 endif
 
@@ -16,6 +29,15 @@ if executable('nimlangserver')
         \ 'allowlist': ['nim'],
         \ })
 endif
+
+if executable('ebnfer')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'ebnfer',
+        \ 'cmd': {server_info->['ebnfer']},
+        \ 'allowlist': ['ebnf']
+        \ })
+endif
+
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
